@@ -112,7 +112,7 @@ let mkPackage =
       https://raw.githubusercontent.com/purescript/package-sets/psc-0.12.5-20190525/src/mkPackage.dhall sha256:0b197efa1d397ace6eb46b243ff2d73a3da5638d8d0ac8473e8e4a8fc528cf57
 
 let upstream =
-      https://raw.githubusercontent.com/purescript/package-sets/psc-0.12.5-20190525/src/packages.dhall sha256:d52b72daa09ca9eca2d62744ea051177773cfaec4303cb23b4bc1b156344eed5
+      https://github.com/purescript/package-sets/releases/download/psc-0.13.5-20200103/packages.dhall sha256:0a6051982fb4eedb72fbe5ca4282259719b7b9b525a4dda60367f98079132f30
 
 let bouzuya =
       https://raw.githubusercontent.com/bouzuya/purescript-bouzuya-packages/20190602/bouzuya.dhall sha256:99b251499be3b2655821f0140d8c442e55b3930144667b1adaecc94f8ac152a9
@@ -123,17 +123,17 @@ let additions =
           {=}
       //  { precise =
               mkPackage
-              [ "arrays"
-              , "globals"
-              , "integers"
-              , "generics-rep"
-              , "strings"
-              , "gen"
-              , "lists"
-              , "exceptions"
-              ]
-              "https://github.com/purescript-contrib/purescript-precise.git"
-              "v4.0.0"
+                [ "arrays"
+                , "globals"
+                , "integers"
+                , "generics-rep"
+                , "strings"
+                , "gen"
+                , "lists"
+                , "exceptions"
+                ]
+                "https://github.com/purescript-contrib/purescript-precise.git"
+                "v4.0.0"
           }
       //  bouzuya
 

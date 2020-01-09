@@ -54,18 +54,13 @@ solve input = Either.either (\s -> Unsafe.unsafeCrashWith s) identity do
   pure ((if solve' s then "AC" else "WA") <> "\n")
 
 solve' :: String -> Boolean
-solve' s
+solve' s 
   | (CodeUnits.charAt 0 s) /= Maybe.Just 'A' = false
-  | let
-      c = Unsafe.unsafePartial (Maybe.fromJust (CodeUnits.charAt 1 s))
-    in
-      c < 'a' || 'z' < c = false
-  | let
-      c =
-        Unsafe.unsafePartial
-          (Maybe.fromJust (CodeUnits.charAt ((CodeUnits.length s) - 1) s))
-    in
-      c < 'a' || 'z' < c = false
+  | c <- Unsafe.unsafePartial (Maybe.fromJust (CodeUnits.charAt 1 s))
+    , c < 'a' || 'z' < c = false
+  | c <- Unsafe.unsafePartial
+        (Maybe.fromJust (CodeUnits.charAt ((CodeUnits.length s) - 1) s))
+    , c < 'a' || 'z' < c = false
   | otherwise =
     let
       s' = CodeUnits.drop 2 s
