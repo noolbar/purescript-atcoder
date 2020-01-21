@@ -18,7 +18,7 @@ main = do
   where
     splitBySp :: String -> Array String
     splitBySp = String.split (String.Pattern " ")
-  
+
     solve :: String -> String
     solve input = do
-      show $ foldr (<>) "" (splitBySp input)
+      (foldr (<>) "" (splitBySp input)) <> "\n"

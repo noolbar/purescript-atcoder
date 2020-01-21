@@ -41,7 +41,7 @@ main = do
         ao = Unsafe.unsafePartial (Maybe.fromJust $ Array.head $ doMatch (readbint input))
         bo = Unsafe.unsafePartial (Maybe.fromJust $ Array.last $ doMatch (readbint input))
       in
-        show $ "  " <> (BI.toString ao) <> " " <> (BI.toString bo) <> "\n"
+        (BI.toString ao) <> " " <> (BI.toString bo) <> "\n"
     
     readbint :: String -> Array BigInt
     readbint input =
